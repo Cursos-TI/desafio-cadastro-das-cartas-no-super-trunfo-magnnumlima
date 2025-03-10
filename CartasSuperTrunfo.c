@@ -1,179 +1,81 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-#define MAX_CARTAS 64
-
-typedef struct 
-{
-    char estado[50];
-    char codigo_da_carta[3];
-    char cidade[50];
-    int populacao;
-    float area_km2;
-    float pib;
-    int pontos_turisticos;
+// Definição da estrutura para armazenar os dados da carta
+ 
+typedef struct {
+    char Estado;
+    char Codigo[4];
+    char Cidade[50];
+    int Populacao;
+    float Area_km2;
+    float PIB;
+    int Pontos_Turisticos;
 } CartaSuperTrunfo;
+
+// Função para exibir os dados da carta
 
 void exibir_carta(CartaSuperTrunfo carta) {
     printf("\n--- Carta Super Trunfo ---\n");
-    printf("Codigo: %s\n", carta.codigo_da_carta);
-    printf("Cidade: %s\n", carta.cidade); 
-    printf("Estado: %s\n", carta.estado);
-    printf("Populacao: %d habitantes\n", carta.populacao);
-    printf("Area: %.2f km²\n", carta.area_km2);
-    printf("PIB: %.2f milhoes\n", carta.pib); 
-    printf("Pontos turisticos: %d\n", carta.pontos_turisticos);
+    printf("Estado: %c\n", carta.Estado);
+    printf("Código: %s\n", carta.Codigo);
+    printf("Nome da Cidade: %s\n", carta.Cidade);
+    printf("População: %d Habitantes\n", carta.Populacao);
+    printf("Área: %.2f km²\n", carta.Area_km2);
+    printf("PIB: %.2f bilhões de reais\n", carta.PIB);
+    printf("Número de Pontos Turísticos: %d\n", carta.Pontos_Turisticos);
     printf("---------------------------\n");
 }
 
-int main() { 
+int main() {
+    CartaSuperTrunfo carta1, carta2;
 
-    // Criando algumas cartas para o jogo
+    // Leitura dos dados da primeira carta
+    printf("Digite o Estado (A-H): ");
+    scanf(" %c", &carta1.Estado);
 
-    // SAO PAULO - Brasil
-    CartaSuperTrunfo cartas[MAX_CARTAS];
-    
-    strcpy(cartas[0].estado, "Sao Paulo");
-    strcpy(cartas[0].codigo_da_carta, "A1");
-    strcpy(cartas[0].cidade, "São Paulo");
-    cartas[0].populacao = 12300000;
-    cartas[0].area_km2 = 1521.11;
-    cartas[0].pib = 699.28;
-    cartas[0].pontos_turisticos = 15;
+    printf("Digite o Código da Carta (Ex: A01): ");
+    scanf(" %3s", carta1.Codigo);
 
-    exibir_carta(cartas[0]);
+    printf("Digite o Nome da Cidade: ");
+    scanf(" %[^\n]s", carta1.Cidade);
 
-    // Bragrança Paulista - Brasil
+    printf("Digite a População: ");
+    scanf("%d", &carta1.Populacao);
 
-    strcpy(cartas[0].estado, "São Paulo");
-    strcpy(cartas[0].codigo_da_carta, "A2");
-    strcpy(cartas[0].cidade, "Bragança Paulista");
-    cartas[0].populacao = 184634;
-    cartas[0].area_km2 = 512.584;
-    cartas[0].pib = 7.954300;
-    cartas[0].pontos_turisticos = 13;
+    printf("Digite a Área (km²): ");
+    scanf("%f", &carta1.Area_km2);
 
-    exibir_carta(cartas[0]);
+    printf("Digite o PIB (em bilhões de reais): ");
+    scanf("%f", &carta1.PIB);
 
-    // Campinas - Brasil
+    printf("Digite o Número de Pontos Turísticos: ");
+    scanf("%d", &carta1.Pontos_Turisticos);
 
-    strcpy(cartas[0].estado, "São Paulo");
-    strcpy(cartas[0].codigo_da_carta, "A3");
-    strcpy(cartas[0].cidade, "Campinas");
-    cartas[0].populacao = 1139047;
-    cartas[0].area_km2 = 794.571;
-    cartas[0].pib = 72.946744;
-    cartas[0].pontos_turisticos = 19;
+    // Leitura dos dados da segunda carta
+    printf("\nDigite o Estado (A-H): ");
+    scanf(" %c", &carta2.Estado);
 
-    exibir_carta(cartas[0]);
+    printf("Digite o Código da Carta (Ex: B02): ");
+    scanf(" %s", carta2.Codigo);
 
-    // Campos do Jordão - Brasil
+    printf("Digite o Nome da Cidade: ");
+    scanf(" %[^\n]s", carta2.Cidade);
 
-    strcpy(cartas[0].estado, "São Paulo");
-    strcpy(cartas[0].codigo_da_carta, "A4");
-    strcpy(cartas[0].cidade, "Campos do Jordão");
-    cartas[0].populacao = 46974;
-    cartas[0].area_km2 = 290.52;
-    cartas[0].pib = 1.27636374;
-    cartas[0].pontos_turisticos = 18;
+    printf("Digite a População: ");
+    scanf("%d", &carta2.Populacao);
 
-    exibir_carta(cartas[0]);
+    printf("Digite a Área (km²): ");
+    scanf("%f", &carta2.Area_km2);
 
-    // Balneário Camboriú - Brasil
+    printf("Digite o PIB (em bilhões de reais): ");
+    scanf("%f", &carta2.PIB);
 
-    strcpy(cartas[0].estado, "Santa Catarina");
-    strcpy(cartas[0].codigo_da_carta, "B1");
-    strcpy(cartas[0].cidade, "Balneário Camboriú");
-    cartas[0].populacao = 139155;
-    cartas[0].area_km2 = 45.214;
-    cartas[0].pib = 6.212892;
-    cartas[0].pontos_turisticos = 20;
+    printf("Digite o Número de Pontos Turísticos: ");
+    scanf("%d", &carta2.Pontos_Turisticos);
 
-    exibir_carta(cartas[0]);
+    // Exibição das cartas cadastradas
+    exibir_carta(carta1);
+    exibir_carta(carta2);
 
-    // Chapecó - Brasil
-
-    strcpy(cartas[0].estado, "Santa Catarina");
-    strcpy(cartas[0].codigo_da_carta, "B2");
-    strcpy(cartas[0].cidade, "Chapecó");
-    cartas[0].populacao = 275959;
-    cartas[0].area_km2 = 624.0846;
-    cartas[0].pib = 13.6000230;
-    cartas[0].pontos_turisticos = 15;
-
-    exibir_carta(cartas[0]);
-  
-    // Criciúma - Brasil
-
-    strcpy(cartas[0].estado, "Santa Catarina");
-    strcpy(cartas[0].codigo_da_carta, "B3");
-    strcpy(cartas[0].cidade, "Criciúma");
-    cartas[0].populacao = 225281;
-    cartas[0].area_km2 = 235.628;
-    cartas[0].pib = 10.063804959;
-    cartas[0].pontos_turisticos = 15;
-
-    exibir_carta(cartas[0]);
-
-    // Catanduvas - Brasil
-
-    strcpy(cartas[0].estado, "Santa Catarina");
-    strcpy(cartas[0].codigo_da_carta, "B4");
-    strcpy(cartas[0].cidade, "Catanduvas");
-    cartas[0].populacao = 10566;
-    cartas[0].area_km2 = 198.033;
-    cartas[0].pib = 258.069904;
-    cartas[0].pontos_turisticos = 8;
-
-    exibir_carta(cartas[0]);
-
-    // Rio de Janeiro - Brasil
-
-    strcpy(cartas[0].estado, "Rio de Janeiro");
-    strcpy(cartas[0].codigo_da_carta, "C1");
-    strcpy(cartas[0].cidade, "Rio de Janeiro");
-    cartas[0].populacao = 6211223;
-    cartas[0].area_km2 = 1.200329;
-    cartas[0].pib = 331.27990203;
-    cartas[0].pontos_turisticos = 25;
-
-    exibir_carta(cartas[0]);
-
-    // Angra dos Reis - Brasil
-
-    strcpy(cartas[0].estado, "Rio de Janeiro");
-    strcpy(cartas[0].codigo_da_carta, "C2");
-    strcpy(cartas[0].cidade, "Angra dos Reis");
-    cartas[0].populacao = 179120;
-    cartas[0].area_km2 = 813.420;
-    cartas[0].pib = 11.19424423;
-    cartas[0].pontos_turisticos = 20;
-
-    exibir_carta(cartas[0]);
-    
-    // Arraial do Cabo - Brasil
-
-    strcpy(cartas[0].estado, "Rio de Janeiro");
-    strcpy(cartas[0].codigo_da_carta, "C3");
-    strcpy(cartas[0].cidade, "Arraial do Cabo");
-    cartas[0].populacao = 30827;
-    cartas[0].area_km2 = 152.305;
-    cartas[0].pib = 328.840250;
-    cartas[0].pontos_turisticos = 14;
-
-    exibir_carta(cartas[0]);
-
-    // Cabo Frio
-
-    strcpy(cartas[0].estado, "Rio de Janeiro");
-    strcpy(cartas[0].codigo_da_carta, "C4");
-    strcpy(cartas[0].cidade, "Cabo Frio");
-    cartas[0].populacao = 222161;
-    cartas[0].area_km2 = 413.449;
-    cartas[0].pib = 12.35962708;
-    cartas[0].pontos_turisticos = 14;
-
-    exibir_carta(cartas[0]);
-
-  return 0;}
+    return 0;
+}
