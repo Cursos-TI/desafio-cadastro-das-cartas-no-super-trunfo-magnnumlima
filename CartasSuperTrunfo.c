@@ -93,13 +93,13 @@ super_poder2 = populacao2 + area2 + pib2 + pontos_turisticos2 + pib_per_capita2 
 
 printf("\nComparacao de Cartas:\n\n");
 
-printf("Populacao: Carta 1 venceu (%s)\n", (populacao1 > populacao2) ? "SIM" : "NAO");
-printf("Area: Carta 1 venceu (%s)\n", (area1 > area2) ? "SIM" : "NAO");
-printf("PIB: Carta 1 venceu (%s)\n", (pib1 > pib2) ? "SIM" : "NAO");
-printf("Pontos Turisticos: Carta 1 venceu (%s)\n", (pontos_turisticos1 > pontos_turisticos2) ? "SIM" : "NAO");
-printf("Densidade Populacional: Carta 1 venceu (%s)\n", (densidade1 < densidade2) ? "SIM" : "NAO");
-printf("PIB per Capita: Carta 1 venceu (%s)\n", (pib_per_capita1 > pib_per_capita2) ? "SIM" : "NAO");
-printf("Super Poder: Carta 1 venceu (%s)\n", (super_poder1 > super_poder2) ? "SIM" : "NAO");
+printf("Populacao: Carta 1 venceu ? (%s)\n", (populacao1 > populacao2) ? "SIM" : "NAO");
+printf("Area: Carta 1 venceu ? (%s)\n", (area1 > area2) ? "SIM" : "NAO");
+printf("PIB: Carta 1 venceu ? (%s)\n", (pib1 > pib2) ? "SIM" : "NAO");
+printf("Pontos Turisticos: Carta 1 venceu ? (%s)\n", (pontos_turisticos1 > pontos_turisticos2) ? "SIM" : "NAO");
+printf("Densidade Populacional: Carta 1 venceu ? (%s)\n", (densidade1 < densidade2) ? "SIM" : "NAO");
+printf("PIB per Capita: Carta 1 venceu ? (%s)\n", (pib_per_capita1 > pib_per_capita2) ? "SIM" : "NAO");
+printf("Super Poder: Carta 1 venceu ?(%s)\n", (super_poder1 > super_poder2) ? "SIM" : "NAO");
 
 return 0;
 
