@@ -15,7 +15,7 @@ int main()
         float pib_per_capita1, pib_per_capita2;
         float super_poder1, super_poder2;
 
-        
+
 // Entrada de dados Carta 1
 
 
@@ -59,7 +59,7 @@ scanf(" %[^\n]", nome2);
 printf("Digite a populacao da Carta 2: ");
 scanf("%d", &populacao2);
 
-printf("Digite o tamanho da area da carta 2: ");
+printf("Digite o tamanho da area em km² da carta 2: ");
 scanf("%f", &area2);
 
 printf("Digite PIB da carta 2: ");
@@ -87,17 +87,19 @@ super_poder1 = populacao1 + area1 + pib1 + pontos_turisticos1 + pib_per_capita1 
 super_poder2 = populacao2 + area2 + pib2 + pontos_turisticos2 + pib_per_capita2 + (1.0f / densidade2);
 
 
-// COMPARAÇÕES JUNTAMENTE COM SAÍDA 
+// COMPARAÇÕES JUNTAMENTE COM SAÍDA  
+
+// ATUALIZAÇAO DO COODIGO DIA 23/03/2025 as 23:30 (adicionado SIM e NAO em comparaçoes)
 
 printf("\nComparacao de Cartas:\n\n");
 
-printf("Populacao: Carta 1 venceu (%d)\n", populacao1 > populacao2);
-printf("Area: Carta 1 venceu (%d)\n", area1 > area2);
-printf("PIB: Carta 1 venceu (%d)\n", pib1 > pib2);
-printf("Pontos Turisticos: Carta 1 venceu (%d)\n", pontos_turisticos1 > pontos_turisticos2);
-printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade1 < densidade2);
-printf("PIB per Capita: Carta 1 venceu (%d)\n", pib_per_capita1 > pib_per_capita2);
-printf("Super Poder: Carta 1 venceu (%d)\n", super_poder1 > super_poder2);
+printf("Populacao: Carta 1 venceu (%s)\n", (populacao1 > populacao2) ? "SIM" : "NAO");
+printf("Area: Carta 1 venceu (%s)\n", (area1 > area2) ? "SIM" : "NAO");
+printf("PIB: Carta 1 venceu (%s)\n", (pib1 > pib2) ? "SIM" : "NAO");
+printf("Pontos Turisticos: Carta 1 venceu (%s)\n", (pontos_turisticos1 > pontos_turisticos2) ? "SIM" : "NAO");
+printf("Densidade Populacional: Carta 1 venceu (%s)\n", (densidade1 < densidade2) ? "SIM" : "NAO");
+printf("PIB per Capita: Carta 1 venceu (%s)\n", (pib_per_capita1 > pib_per_capita2) ? "SIM" : "NAO");
+printf("Super Poder: Carta 1 venceu (%s)\n", (super_poder1 > super_poder2) ? "SIM" : "NAO");
 
 return 0;
 
